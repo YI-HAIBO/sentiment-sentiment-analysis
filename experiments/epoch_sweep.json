@@ -1,0 +1,41 @@
+{
+  "test_size": 20000,
+  "epochs": [
+    {
+      "epochs": 3,
+      "n_train": 3600,
+      "n_val": 400,
+      "n_test": 20000,
+      "accuracy": 0.7262,
+      "macro_f1": 0.6909060282601263,
+      "weighted_f1": 0.7333687851338507,
+      "neutral_f1": 0.4785922438915041,
+      "best_epoch": null,
+      "elapsed_s": 1343.0
+    },
+    {
+      "epochs": 5,
+      "n_train": 3600,
+      "n_val": 400,
+      "n_test": 20000,
+      "accuracy": 0.72815,
+      "macro_f1": 0.6871851392305134,
+      "weighted_f1": 0.7318589312599633,
+      "neutral_f1": 0.4638161790832642,
+      "best_epoch": null,
+      "elapsed_s": 1965.3
+    },
+    {
+      "epochs": 8,
+      "n_train": 3600,
+      "n_val": 400,
+      "n_test": 20000,
+      "accuracy": 0.7334,
+      "macro_f1": 0.6878363110145128,
+      "weighted_f1": 0.7342655825978153,
+      "neutral_f1": 0.4556899530980005,
+      "best_epoch": null,
+      "elapsed_s": 3439.9
+    }
+  ]
+}

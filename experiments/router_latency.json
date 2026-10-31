@@ -1,0 +1,24 @@
+{
+ "environment": {
+  "torch_threads": 14,
+  "protocol": "200 single requests, 8 warm-up, CPU-only, wall-clock, inference only"
+ },
+ "budget_ms": 5.0,
+ "tau": 0.5139,
+ "measured": {
+  "mean_ms": 9.563,
+  "median_ms": 0.181,
+  "p95_ms": 79.018,
+  "tier1_mean_ms": 0.186,
+  "tier2_mean_ms_when_escalated": 66.973,
+  "escalated_of_200": 28,
+  "measured_escalation_rate": 0.14
+ },
+ "analytical": {
+  "c1_ms": 0.483,
+  "c2_ms": 44.81,
+  "expected_mean_ms": 5.049
+ },
+ "gap_measured_minus_analytical_ms": 4.513,
+ "note": "The routed deployment cost is MEASURED here and compared with the analytical estimate used in Eq. (1)."
+}

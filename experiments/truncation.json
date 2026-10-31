@@ -1,0 +1,64 @@
+{
+ "tokenizer": "models/distilbert_local",
+ "splits": {
+  "bert_train.csv": {
+   "n": 3200,
+   "mean": 184.7178125,
+   "median": 133.5,
+   "p95": 508.0,
+   "p99": 842.0099999999998,
+   "frac_gt_128": 0.5215625,
+   "frac_gt_160": 0.429375,
+   "frac_gt_256": 0.224375,
+   "frac_gt_512": 0.04875,
+   "bits_of_text_truncated_at_128": null,
+   "elapsed_s": 0.3
+  },
+  "bert_val.csv": {
+   "n": 400,
+   "mean": 180.275,
+   "median": 132.5,
+   "p95": 487.69999999999936,
+   "p99": 698.3199999999997,
+   "frac_gt_128": 0.515,
+   "frac_gt_160": 0.41,
+   "frac_gt_256": 0.23,
+   "frac_gt_512": 0.0375,
+   "bits_of_text_truncated_at_128": null,
+   "elapsed_s": 0.0
+  },
+  "bert_test.csv": {
+   "n": 400,
+   "mean": 178.4925,
+   "median": 134.0,
+   "p95": 442.7999999999993,
+   "p99": 839.06,
+   "frac_gt_128": 0.5225,
+   "frac_gt_160": 0.425,
+   "frac_gt_256": 0.2075,
+   "frac_gt_512": 0.0425,
+   "bits_of_text_truncated_at_128": null,
+   "elapsed_s": 0.0
+  },
+  "test.csv": {
+   "n": 20000,
+   "mean": 179.96555,
+   "median": 132.0,
+   "p95": 499.0,
+   "p99": 806.0,
+   "frac_gt_128": 0.5128,
+   "frac_gt_160": 0.41385,
+   "frac_gt_256": 0.21485,
+   "frac_gt_512": 0.0461,
+   "bits_of_text_truncated_at_128": null,
+   "elapsed_s": 1.7
+  }
+ },
+ "_source": {
+  "bert_train.csv": "BERT fine-tuning subset",
+  "bert_val.csv": "BERT fine-tuning subset",
+  "bert_test.csv": "BERT fine-tuning subset",
+  "test.csv": "baseline (TF-IDF) test split, 20k"
+ },
+ "note": "Truncation-rate audit of the four CSV splits, with the ml=256 sensitivity run alongside for reference (experiments/bert_abl_ml256.json: macro-F1 0.6906 at ml=256 vs 0.6432 at ml=128 on the 400-row BERT test split)."
+}

@@ -1,0 +1,41 @@
+{
+ "variant": "batch_size_32",
+ "config": {
+  "batch_size": 32,
+  "epochs": 2,
+  "lr": 2e-05,
+  "max_length": 128,
+  "seed": 42,
+  "reference_batch_size": 16
+ },
+ "n_train": 3200,
+ "n_val": 400,
+ "bert_test_400": {
+  "accuracy": 0.6775,
+  "macro_f1": 0.6370765372737898,
+  "n": 400
+ },
+ "test_20k": {
+  "accuracy": 0.7174,
+  "macro_f1": 0.6773655793962311,
+  "n": 20000
+ },
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.9473112440109253,
+   "train_acc": 0.5390625,
+   "val_acc": 0.7,
+   "val_macro_f1": 0.6829122764268524
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.6480066621303558,
+   "train_acc": 0.7365625,
+   "val_acc": 0.7275,
+   "val_macro_f1": 0.6950206189976577
+  }
+ ],
+ "elapsed_s": 1764.1,
+ "note": "Adds the batch-size row of the published ablation table."
+}

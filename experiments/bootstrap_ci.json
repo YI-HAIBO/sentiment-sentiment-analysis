@@ -1,0 +1,103 @@
+{
+ "n_test": 20000,
+ "note": "CIs for all four models on the 20k test split, and an explicit decomposition of the published zero std (deterministic algorithm vs sampling variability of the training rows).",
+ "part_A_bootstrap_ci": {
+  "tfidf_logreg": {
+   "macro_f1_point": 0.7550368535532063,
+   "macro_f1_mean": 0.7549768240184487,
+   "ci95": [
+    0.7488764384733028,
+    0.7609663170362154
+   ]
+  },
+  "tfidf_svc": {
+   "macro_f1_point": 0.7451156395705484,
+   "macro_f1_mean": 0.7450199988556636,
+   "ci95": [
+    0.7384584639814299,
+    0.7514370927082806
+   ]
+  },
+  "vader_default": {
+   "macro_f1_point": 0.4213827434047512,
+   "macro_f1_mean": 0.42132846951700315,
+   "ci95": [
+    0.41565194665387367,
+    0.4270201676923549
+   ]
+  },
+  "vader_tuned": {
+   "macro_f1_point": 0.44624818711013275,
+   "macro_f1_mean": 0.4462307794232572,
+   "ci95": [
+    0.4398277570518072,
+    0.4525645238796718
+   ]
+  },
+  "distilbert": {
+   "macro_f1_point": 0.6824752508787227,
+   "macro_f1_mean": 0.682436372894132,
+   "ci95": [
+    0.6760111962641834,
+    0.6887486815743297
+   ]
+  }
+ },
+ "part_B_zero_variance_decomposition": {
+  "algorithm_seed_variation": {
+   "runs": [
+    {
+     "seed": 7,
+     "accuracy": 0.78455,
+     "macro_f1": 0.7550368535532063,
+     "n_features": 30000
+    },
+    {
+     "seed": 123,
+     "accuracy": 0.78455,
+     "macro_f1": 0.7550368535532063,
+     "n_features": 30000
+    },
+    {
+     "seed": 2024,
+     "accuracy": 0.78455,
+     "macro_f1": 0.7550368535532063,
+     "n_features": 30000
+    }
+   ],
+   "macro_f1_mean": 0.7550368535532063,
+   "macro_f1_std": 0.0,
+   "explanation": "LogisticRegression with lbfgs on identical input rows converges to the same optimum, so std = 0 is algorithmic determinism, not a robustness claim."
+  },
+  "training_data_variation": {
+   "runs": [
+    {
+     "rep": 0,
+     "seed": 7,
+     "accuracy": 0.77685,
+     "macro_f1": 0.7447705178798817,
+     "n_features": 30000
+    },
+    {
+     "rep": 1,
+     "seed": 123,
+     "accuracy": 0.77315,
+     "macro_f1": 0.7405477154588426,
+     "n_features": 30000
+    },
+    {
+     "rep": 2,
+     "seed": 2024,
+     "accuracy": 0.7786,
+     "macro_f1": 0.7467219833684949,
+     "n_features": 30000
+    }
+   ],
+   "macro_f1_mean": 0.7440134055690731,
+   "macro_f1_std": 0.002576859890567617,
+   "explanation": "Three bootstrap resamples of the 160k training rows, same algorithm seed: this is the sampling variability of the headline TF-IDF+LogReg number."
+  }
+ },
+ "elapsed_s": 331.3,
+ "audit_note": "Supplementary zero-variance-decomposition analysis of the paired bootstrap. The manuscript tab:cis cites bootstrap.json (DistilBERT 20k = 0.6810 [0.6746, 0.6873]); this file reports a separate bootstrap run (0.6825 [0.6760, 0.6887]) that is within sampling noise."
+}

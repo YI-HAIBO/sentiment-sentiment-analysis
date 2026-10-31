@@ -1,0 +1,66 @@
+{
+  "seed": 42,
+  "source": "Yelp/yelp_review_full",
+  "hf_endpoint": "https://hf-mirror.com",
+  "mapping": {
+    "negative": [0, 1],
+    "neutral": [2],
+    "positive": [3, 4]
+  },
+  "label_order": ["negative", "neutral", "positive"],
+  "star_counts": {
+    "0": 130000,
+    "1": 130000,
+    "2": 130000,
+    "3": 130000,
+    "4": 130000
+  },
+  "n_total": 649994,
+  "baseline": {
+    "train": {
+      "n": 160000,
+      "class_counts": {"negative": 64000, "positive": 64000, "neutral": 32000},
+      "mean_len_chars": 728.6468,
+      "median_len_chars": 535.0,
+      "mean_len_words": 133.98929375
+    },
+    "val": {
+      "n": 20000,
+      "class_counts": {"negative": 8000, "positive": 8000, "neutral": 4000},
+      "mean_len_chars": 731.2789,
+      "median_len_chars": 544.0,
+      "mean_len_words": 134.5167
+    },
+    "test": {
+      "n": 20000,
+      "class_counts": {"negative": 8000, "positive": 8000, "neutral": 4000},
+      "mean_len_chars": 728.4796,
+      "median_len_chars": 537.0,
+      "mean_len_words": 134.05655
+    }
+  },
+  "bert": {
+    "note": "BERT subset is capped at 4000 rows (config.bert_subset) to fit CPU-only fine-tuning within the session budget. This is an intentional small-data regime study, not a full-scale BERT run.",
+    "train": {
+      "n": 3200,
+      "class_counts": {"negative": 1280, "positive": 1280, "neutral": 640},
+      "mean_len_chars": 729.52875,
+      "median_len_chars": 541.0,
+      "mean_len_words": 134.0778125
+    },
+    "val": {
+      "n": 400,
+      "class_counts": {"negative": 160, "positive": 160, "neutral": 80},
+      "mean_len_chars": 755.1566666666666,
+      "median_len_chars": 538.5,
+      "mean_len_words": 139.0175
+    },
+    "test": {
+      "n": 400,
+      "class_counts": {"negative": 160, "positive": 160, "neutral": 80},
+      "mean_len_chars": 735.2275,
+      "median_len_chars": 515.0,
+      "mean_len_words": 135.21166666666667
+    }
+  }
+}

@@ -1,0 +1,362 @@
+{
+ "label_order": [
+  "negative",
+  "neutral",
+  "positive"
+ ],
+ "models": {
+  "bert_distilbert": {
+   "val": {
+    "accuracy": 0.6775,
+    "macro_f1": 0.6437513223077813,
+    "weighted_f1": 0.6867873010550519,
+    "per_class": {
+     "negative": {
+      "precision": 0.7371794871794872,
+      "recall": 0.71875,
+      "f1": 0.7278481012658228,
+      "support": 160
+     },
+     "neutral": {
+      "precision": 0.38235294117647056,
+      "recall": 0.4875,
+      "f1": 0.42857142857142855,
+      "support": 80
+     },
+     "positive": {
+      "precision": 0.823943661971831,
+      "recall": 0.73125,
+      "f1": 0.7748344370860927,
+      "support": 160
+     }
+    },
+    "confusion_matrix": [
+     [
+      115,
+      37,
+      8
+     ],
+     [
+      24,
+      39,
+      17
+     ],
+     [
+      17,
+      26,
+      117
+     ]
+    ],
+    "n": 400
+   },
+   "test": {
+    "accuracy": 0.6775,
+    "macro_f1": 0.6437513223077813,
+    "weighted_f1": 0.6867873010550519,
+    "per_class": {
+     "negative": {
+      "precision": 0.7371794871794872,
+      "recall": 0.71875,
+      "f1": 0.7278481012658228,
+      "support": 160
+     },
+     "neutral": {
+      "precision": 0.38235294117647056,
+      "recall": 0.4875,
+      "f1": 0.42857142857142855,
+      "support": 80
+     },
+     "positive": {
+      "precision": 0.823943661971831,
+      "recall": 0.73125,
+      "f1": 0.7748344370860927,
+      "support": 160
+     }
+    },
+    "confusion_matrix": [
+     [
+      115,
+      37,
+      8
+     ],
+     [
+      24,
+      39,
+      17
+     ],
+     [
+      17,
+      26,
+      117
+     ]
+    ],
+    "n": 400
+   }
+  },
+  "vader": {
+   "test": {
+    "accuracy": 0.5665,
+    "macro_f1": 0.44624818711013275,
+    "weighted_f1": 0.5152366452682099,
+    "per_class": {
+     "negative": {
+      "precision": 0.846589509972913,
+      "recall": 0.42975,
+      "f1": 0.5701019815935661,
+      "support": 8000
+     },
+     "neutral": {
+      "precision": 0.2428842504743833,
+      "recall": 0.064,
+      "f1": 0.10130589631974674,
+      "support": 4000
+     },
+     "positive": {
+      "precision": 0.5129996640913671,
+      "recall": 0.9545,
+      "f1": 0.6673366834170854,
+      "support": 8000
+     }
+    },
+    "confusion_matrix": [
+     [
+      3438,
+      623,
+      3939
+     ],
+     [
+      434,
+      256,
+      3310
+     ],
+     [
+      189,
+      175,
+      7636
+     ]
+    ],
+    "n": 20000
+   },
+   "val": {
+    "accuracy": 0.56005,
+    "macro_f1": 0.43757411463548274,
+    "weighted_f1": 0.5069359450932966,
+    "per_class": {
+     "negative": {
+      "precision": 0.8365865865865866,
+      "recall": 0.417875,
+      "f1": 0.557352450816939,
+      "support": 8000
+     },
+     "neutral": {
+      "precision": 0.21892925430210325,
+      "recall": 0.05725,
+      "f1": 0.090764962346413,
+      "support": 4000
+     },
+     "positive": {
+      "precision": 0.5100280786201363,
+      "recall": 0.953625,
+      "f1": 0.6646049307430961,
+      "support": 8000
+     }
+    },
+    "confusion_matrix": [
+     [
+      3343,
+      657,
+      4000
+     ],
+     [
+      442,
+      229,
+      3329
+     ],
+     [
+      211,
+      160,
+      7629
+     ]
+    ],
+    "n": 20000
+   }
+  },
+  "tfidf_logreg": {
+   "val": {
+    "accuracy": 0.78135,
+    "macro_f1": 0.7511606651653254,
+    "weighted_f1": 0.7889093398834368,
+    "per_class": {
+     "negative": {
+      "precision": 0.8747158711057628,
+      "recall": 0.81775,
+      "f1": 0.8452742425221268,
+      "support": 8000
+     },
+     "neutral": {
+      "precision": 0.5031570639305446,
+      "recall": 0.6375,
+      "f1": 0.5624172915747684,
+      "support": 4000
+     },
+     "positive": {
+      "precision": 0.8768281229035287,
+      "recall": 0.816875,
+      "f1": 0.8457904613990811,
+      "support": 8000
+     }
+    },
+    "confusion_matrix": [
+     [
+      6542,
+      1254,
+      204
+     ],
+     [
+      736,
+      2550,
+      714
+     ],
+     [
+      201,
+      1264,
+      6535
+     ]
+    ],
+    "n": 20000
+   },
+   "test": {
+    "accuracy": 0.78455,
+    "macro_f1": 0.7550368535532063,
+    "weighted_f1": 0.7919412360622818,
+    "per_class": {
+     "negative": {
+      "precision": 0.8777467039552537,
+      "recall": 0.823875,
+      "f1": 0.8499580888516345,
+      "support": 8000
+     },
+     "neutral": {
+      "precision": 0.510357072400868,
+      "recall": 0.64675,
+      "f1": 0.5705149410078288,
+      "support": 4000
+     },
+     "positive": {
+      "precision": 0.8775262732417138,
+      "recall": 0.814125,
+      "f1": 0.8446375308001556,
+      "support": 8000
+     }
+    },
+    "confusion_matrix": [
+     [
+      6591,
+      1231,
+      178
+     ],
+     [
+      682,
+      2587,
+      731
+     ],
+     [
+      236,
+      1251,
+      6513
+     ]
+    ],
+    "n": 20000
+   }
+  },
+  "tfidf_svc": {
+   "val": {
+    "accuracy": 0.78715,
+    "macro_f1": 0.7433085535894682,
+    "weighted_f1": 0.7863232650670479,
+    "per_class": {
+     "negative": {
+      "precision": 0.8477854023705552,
+      "recall": 0.849375,
+      "f1": 0.8485794567592881,
+      "support": 8000
+     },
+     "neutral": {
+      "precision": 0.5351462288353002,
+      "recall": 0.5215,
+      "f1": 0.52823499620157,
+      "support": 4000
+     },
+     "positive": {
+      "precision": 0.8485223197724744,
+      "recall": 0.85775,
+      "f1": 0.8531112078075465,
+      "support": 8000
+     }
+    },
+    "confusion_matrix": [
+     [
+      6795,
+      930,
+      275
+     ],
+     [
+      964,
+      2086,
+      950
+     ],
+     [
+      256,
+      882,
+      6862
+     ]
+    ],
+    "n": 20000
+   },
+   "test": {
+    "accuracy": 0.78875,
+    "macro_f1": 0.7451156395705484,
+    "weighted_f1": 0.7879915375327228,
+    "per_class": {
+     "negative": {
+      "precision": 0.8489306465570527,
+      "recall": 0.858375,
+      "f1": 0.8536267014730561,
+      "support": 8000
+     },
+     "neutral": {
+      "precision": 0.5371223758320532,
+      "recall": 0.5245,
+      "f1": 0.5307361497596762,
+      "support": 4000
+     },
+     "positive": {
+      "precision": 0.8507183010618363,
+      "recall": 0.85125,
+      "f1": 0.8509840674789129,
+      "support": 8000
+     }
+    },
+    "confusion_matrix": [
+     [
+      6867,
+      901,
+      232
+     ],
+     [
+      939,
+      2098,
+      963
+     ],
+     [
+      283,
+      907,
+      6810
+     ]
+    ],
+    "n": 20000
+   }
+  }
+ },
+ "audit_note": "Historical summary artifact; the manuscript reports the 400-row BERT split from perclass_table.json. The bert_distilbert.val==test block is a stale duplicate, not a paper source."
+}

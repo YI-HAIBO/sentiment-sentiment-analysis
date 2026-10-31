@@ -1,0 +1,261 @@
+{
+ "n_test": 20000,
+ "c1_ms": 0.483,
+ "c2_ms": 44.81,
+ "tier1_macro_f1": 0.7548232515060856,
+ "tier2_macro_f1": 0.7088891531742337,
+ "note": "All strategies share the same two tiers, the same test split and the same budget-implied escalation rate; only the routing rule differs. Tier-2 = the tuned DistilBERT checkpoint behind Table 12 (experiments/teacher_test_proba.npy).",
+ "budgets": {
+  "B_1": {
+   "budget_ms": 1.0,
+   "escalation_rate": 0.0117,
+   "mean_latency_ms_analytic": 1.006,
+   "btr_test_quantile": {
+    "tau": 0.4033,
+    "macro_f1": 0.7566300504446657,
+    "accuracy": 0.7864
+   },
+   "btr_val_quantile": {
+    "tau_on_validation": 0.4066,
+    "tau_applied_to_test": 0.4066,
+    "macro_f1": 0.7566801214171573,
+    "accuracy": 0.7864,
+    "realized_escalation_rate": 0.0126
+   },
+   "random": {
+    "macro_f1_mean": 0.7542170085257023,
+    "macro_f1_std": 0.0003406289609144015,
+    "macro_f1_best_of_20": 0.75475534951359,
+    "accuracy_mean": 0.7840275000000001
+   },
+   "entropy": {
+    "macro_f1": 0.7560707828880567,
+    "accuracy": 0.7859
+   },
+   "margin": {
+    "macro_f1": 0.7555160519057469,
+    "accuracy": 0.7852
+   },
+   "oracle_upper_bound": {
+    "macro_f1": 0.7674195352867565,
+    "n_fixable": 1625
+   }
+  },
+  "B_2": {
+   "budget_ms": 2.0,
+   "escalation_rate": 0.0342,
+   "mean_latency_ms_analytic": 2.017,
+   "btr_test_quantile": {
+    "tau": 0.4525,
+    "macro_f1": 0.7572802071914025,
+    "accuracy": 0.7871
+   },
+   "btr_val_quantile": {
+    "tau_on_validation": 0.4547,
+    "tau_applied_to_test": 0.4547,
+    "macro_f1": 0.7571567661166133,
+    "accuracy": 0.787,
+    "realized_escalation_rate": 0.0359
+   },
+   "random": {
+    "macro_f1_mean": 0.7531999013290018,
+    "macro_f1_std": 0.000574493147182607,
+    "macro_f1_best_of_20": 0.7540649113352765,
+    "accuracy_mean": 0.782995
+   },
+   "entropy": {
+    "macro_f1": 0.757152781969692,
+    "accuracy": 0.7871
+   },
+   "margin": {
+    "macro_f1": 0.7566622287766229,
+    "accuracy": 0.7864
+   },
+   "oracle_upper_bound": {
+    "macro_f1": 0.7921508861886254,
+    "n_fixable": 1625
+   }
+  },
+  "B_5": {
+   "budget_ms": 5.0,
+   "escalation_rate": 0.1019,
+   "mean_latency_ms_analytic": 5.049,
+   "btr_test_quantile": {
+    "tau": 0.5139,
+    "macro_f1": 0.7578338239423669,
+    "accuracy": 0.78745
+   },
+   "btr_val_quantile": {
+    "tau_on_validation": 0.5147,
+    "tau_applied_to_test": 0.5147,
+    "macro_f1": 0.7577641340129185,
+    "accuracy": 0.7874,
+    "realized_escalation_rate": 0.103
+   },
+   "random": {
+    "macro_f1_mean": 0.750080195180731,
+    "macro_f1_std": 0.0009607378516374059,
+    "macro_f1_best_of_20": 0.7520758486119142,
+    "accuracy_mean": 0.779865
+   },
+   "entropy": {
+    "macro_f1": 0.7544464005693973,
+    "accuracy": 0.78455
+   },
+   "margin": {
+    "macro_f1": 0.7597256064848872,
+    "accuracy": 0.78905
+   },
+   "oracle_upper_bound": {
+    "macro_f1": 0.84477262786859,
+    "n_fixable": 1625
+   }
+  },
+  "B_10": {
+   "budget_ms": 10.0,
+   "escalation_rate": 0.2147,
+   "mean_latency_ms_analytic": 10.104,
+   "btr_test_quantile": {
+    "tau": 0.5934,
+    "macro_f1": 0.7575976681354248,
+    "accuracy": 0.7873
+   },
+   "btr_val_quantile": {
+    "tau_on_validation": 0.5961,
+    "tau_applied_to_test": 0.5961,
+    "macro_f1": 0.7568758413366775,
+    "accuracy": 0.7867,
+    "realized_escalation_rate": 0.2184
+   },
+   "random": {
+    "macro_f1_mean": 0.74488724146127,
+    "macro_f1_std": 0.0013714489041462595,
+    "macro_f1_best_of_20": 0.7481957853425362,
+    "accuracy_mean": 0.7748299999999999
+   },
+   "entropy": {
+    "macro_f1": 0.7495901857481831,
+    "accuracy": 0.78015
+   },
+   "margin": {
+    "macro_f1": 0.7579676125445656,
+    "accuracy": 0.7877
+   },
+   "oracle_upper_bound": {
+    "macro_f1": 0.84477262786859,
+    "n_fixable": 1625
+   }
+  },
+  "B_15": {
+   "budget_ms": 15.0,
+   "escalation_rate": 0.3275,
+   "mean_latency_ms_analytic": 15.158,
+   "btr_test_quantile": {
+    "tau": 0.6766,
+    "macro_f1": 0.7480886346030419,
+    "accuracy": 0.77885
+   },
+   "btr_val_quantile": {
+    "tau_on_validation": 0.6778,
+    "tau_applied_to_test": 0.6778,
+    "macro_f1": 0.7479964877937303,
+    "accuracy": 0.7788,
+    "realized_escalation_rate": 0.3286
+   },
+   "random": {
+    "macro_f1_mean": 0.7396030135056135,
+    "macro_f1_std": 0.0013029053713453729,
+    "macro_f1_best_of_20": 0.7428924436624147,
+    "accuracy_mean": 0.76952
+   },
+   "entropy": {
+    "macro_f1": 0.7455555089403506,
+    "accuracy": 0.77675
+   },
+   "margin": {
+    "macro_f1": 0.7501724601580549,
+    "accuracy": 0.7806
+   },
+   "oracle_upper_bound": {
+    "macro_f1": 0.84477262786859,
+    "n_fixable": 1625
+   }
+  }
+ },
+ "bootstrap_paired_B5": {
+  "tier1_only": {
+   "macro_f1_mean": 0.7547532009042466,
+   "ci95": [
+    0.7487955288609761,
+    0.7607679500840067
+   ],
+   "gain_vs_tier1_mean": 0.0,
+   "gain_ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "btr_test": {
+   "macro_f1_mean": 0.7577741167552614,
+   "ci95": [
+    0.7517115586210493,
+    0.7638923017370889
+   ],
+   "gain_vs_tier1_mean": 0.0030209158510148535,
+   "gain_ci95": [
+    -0.0001864546238384306,
+    0.006195129061902801
+   ]
+  },
+  "btr_val": {
+   "macro_f1_mean": 0.7577094419606848,
+   "ci95": [
+    0.7517473580137012,
+    0.76386495538244
+   ],
+   "gain_vs_tier1_mean": 0.0029562410564382365,
+   "gain_ci95": [
+    -0.0002988809703770745,
+    0.006081971798357292
+   ]
+  },
+  "random": {
+   "macro_f1_mean": 0.7503958566356846,
+   "ci95": [
+    0.7445069899464755,
+    0.7563973589371217
+   ],
+   "gain_vs_tier1_mean": -0.004357344268561938,
+   "gain_ci95": [
+    -0.006520352012780178,
+    -0.0021581052266737705
+   ]
+  },
+  "entropy": {
+   "macro_f1_mean": 0.7544043833699872,
+   "ci95": [
+    0.7485158745343098,
+    0.7605637403813525
+   ],
+   "gain_vs_tier1_mean": -0.00034881753425933834,
+   "gain_ci95": [
+    -0.003440969265067004,
+    0.0027932488442781924
+   ]
+  },
+  "tier2_only": {
+   "macro_f1_mean": 0.7088237440526823,
+   "ci95": [
+    0.702743057585174,
+    0.714878205974741
+   ],
+   "gain_vs_tier1_mean": -0.04592945685156419,
+   "gain_ci95": [
+    -0.0529213525345512,
+    -0.03920275558545041
+   ]
+  }
+ },
+ "n_boot": 2000,
+ "elapsed_s": 1.0
+}

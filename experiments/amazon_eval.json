@@ -1,0 +1,153 @@
+{
+ "dataset": "amazon_reviews_multi (en), mirror SetFit/amazon_reviews_multi_en",
+ "mapping": "1-2 negative / 3 neutral / 4-5 positive",
+ "n_test": 5000,
+ "vader_default": {
+  "macro_f1": 0.4780003069091281,
+  "tuned_thresholds_on_val": [
+   -0.03999999999999976,
+   0.30000000000000054
+  ],
+  "elapsed_s": 2.3
+ },
+ "vader_tuned": {
+  "macro_f1": 0.5022755625830247,
+  "per_class": {
+   "negative": {
+    "precision": 0.7078159240321402,
+    "recall": 0.4845,
+    "f1": 0.5752448797862867
+   },
+   "neutral": {
+    "precision": 0.2313803376365442,
+    "recall": 0.233,
+    "f1": 0.23218734429496762
+   },
+   "positive": {
+    "precision": 0.616234756097561,
+    "recall": 0.8085,
+    "f1": 0.6993944636678201
+   }
+  }
+ },
+ "tfidf_logreg_160k": {
+  "macro_f1": 0.6767418497054184,
+  "accuracy": 0.7104,
+  "n_features": 30000,
+  "per_class": {
+   "negative": {
+    "precision": 0.7977036632039366,
+    "recall": 0.7295,
+    "f1": 0.7620788717680856
+   },
+   "neutral": {
+    "precision": 0.3963963963963964,
+    "recall": 0.528,
+    "f1": 0.4528301886792453
+   },
+   "positive": {
+    "precision": 0.8510059815116912,
+    "recall": 0.7825,
+    "f1": 0.8153164886689241
+   }
+  }
+ },
+ "tfidf_svc_160k": {
+  "macro_f1": 0.6580327989581808,
+  "accuracy": 0.7142,
+  "n_features": 30000
+ },
+ "tfidf_logreg_matched_3200": {
+  "macro_f1": 0.6096244351039622,
+  "accuracy": 0.6536,
+  "n_train": 3200,
+  "per_class": {
+   "negative": {
+    "precision": 0.71280276816609,
+    "recall": 0.721,
+    "f1": 0.7168779517772806
+   },
+   "neutral": {
+    "precision": 0.36044362292051757,
+    "recall": 0.39,
+    "f1": 0.3746397694524496
+   },
+   "positive": {
+    "precision": 0.7577836411609499,
+    "recall": 0.718,
+    "f1": 0.7373555840821566
+   }
+  }
+ },
+ "distilbert_bertsplit_400": {
+  "macro_f1": 0.6418727221610798,
+  "accuracy": 0.6575,
+  "n_train": 3200,
+  "per_class": {
+   "negative": {
+    "precision": 0.826530612244898,
+    "recall": 0.50625,
+    "f1": 0.627906976744186
+   },
+   "neutral": {
+    "precision": 0.34810126582278483,
+    "recall": 0.6875,
+    "f1": 0.46218487394957986
+   },
+   "positive": {
+    "precision": 0.8819444444444444,
+    "recall": 0.79375,
+    "f1": 0.8355263157894737
+   }
+  }
+ },
+ "distilbert_test_5000": {
+  "macro_f1": 0.6411840962388539,
+  "accuracy": 0.656,
+  "n_train": 3200,
+  "per_class": {
+   "negative": {
+    "precision": 0.8355754857997011,
+    "recall": 0.559,
+    "f1": 0.6698621929298981
+   },
+   "neutral": {
+    "precision": 0.34327577184720043,
+    "recall": 0.656,
+    "f1": 0.4507042253521127
+   },
+   "positive": {
+    "precision": 0.8600799543118218,
+    "recall": 0.753,
+    "f1": 0.8029858704345508
+   }
+  },
+  "eval_elapsed_s": 148.6
+ },
+ "bootstrap_paired": {
+  "tfidf_matched_3200": {
+   "macro_f1_mean": 0.6094272777396462,
+   "ci95": [
+    0.5961557878630038,
+    0.6227151691758629
+   ]
+  },
+  "distilbert_3200": {
+   "macro_f1_mean": 0.6410901464411742,
+   "ci95": [
+    0.6272756199785151,
+    0.6535874728334115
+   ]
+  },
+  "tfidf_160k": {
+   "macro_f1_mean": 0.6765439480297015,
+   "ci95": [
+    0.6640975118813467,
+    0.6891399007784773
+   ]
+  }
+ },
+ "elapsed_s": 1027.0,
+ "tfidf_train_note": "Stratified 160,000-row subset of the 200k Amazon en training corpus, disjoint from the 4k BERT subset (mirrors the Yelp 160k/4k protocol).",
+ "note": "Generalizability check on an independent review domain. Same three-class mapping, same training budgets (160k TF-IDF / 3.2k BERT), same reference DistilBERT configuration as the Yelp study."
+}

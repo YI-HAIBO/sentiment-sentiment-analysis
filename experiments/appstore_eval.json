@@ -1,0 +1,162 @@
+{
+ "dataset": "Google Play store reviews (lara-popovic/google_play_store_reviews), star-balanced subsample (38k/star)",
+ "mapping": "1-2 negative / 3 neutral / 4-5 positive",
+ "n_test": 5000,
+ "n_apps": 96,
+ "n_categories": 10,
+ "pool_size": 190000,
+ "vader_default": {
+  "macro_f1": 0.4474586013852739,
+  "tuned_thresholds_on_val": [
+   -0.09999999999999981,
+   0.30000000000000054
+  ],
+  "elapsed_s": 3.2
+ },
+ "vader_tuned": {
+  "macro_f1": 0.4850546742746675,
+  "per_class": {
+   "negative": {
+    "precision": 0.6993693062368606,
+    "recall": 0.499,
+    "f1": 0.5824336154070616
+   },
+   "neutral": {
+    "precision": 0.2510948905109489,
+    "recall": 0.172,
+    "f1": 0.20415430267062315
+   },
+   "positive": {
+    "precision": 0.5657894736842105,
+    "recall": 0.817,
+    "f1": 0.6685761047463176
+   }
+  }
+ },
+ "tfidf_logreg_160k": {
+  "macro_f1": 0.6509839168076558,
+  "accuracy": 0.6852,
+  "n_features": 30000,
+  "per_class": {
+   "negative": {
+    "precision": 0.7655028660760813,
+    "recall": 0.7345,
+    "f1": 0.7496810410819087
+   },
+   "neutral": {
+    "precision": 0.37662337662337664,
+    "recall": 0.493,
+    "f1": 0.4270246860112603
+   },
+   "positive": {
+    "precision": 0.8261851015801355,
+    "recall": 0.732,
+    "f1": 0.7762460233297985
+   }
+  }
+ },
+ "tfidf_svc_160k": {
+  "macro_f1": 0.6258888634077612,
+  "accuracy": 0.6858,
+  "n_features": 30000
+ },
+ "tfidf_logreg_matched_3200": {
+  "macro_f1": 0.5937433180653581,
+  "accuracy": 0.6472,
+  "n_train": 3200,
+  "per_class": {
+   "negative": {
+    "precision": 0.6741921204072598,
+    "recall": 0.7615,
+    "f1": 0.715191359474055
+   },
+   "neutral": {
+    "precision": 0.3357438016528926,
+    "recall": 0.325,
+    "f1": 0.33028455284552843
+   },
+   "positive": {
+    "precision": 0.7828539199097575,
+    "recall": 0.694,
+    "f1": 0.7357540418764908
+   }
+  }
+ },
+ "distilbert_bertsplit_400": {
+  "macro_f1": 0.6703433032682428,
+  "accuracy": 0.695,
+  "n_train": 3200,
+  "per_class": {
+   "negative": {
+    "precision": 0.7485380116959064,
+    "recall": 0.8,
+    "f1": 0.7734138972809668
+   },
+   "neutral": {
+    "precision": 0.4067796610169492,
+    "recall": 0.6,
+    "f1": 0.48484848484848486
+   },
+   "positive": {
+    "precision": 0.918918918918919,
+    "recall": 0.6375,
+    "f1": 0.7527675276752768
+   }
+  }
+ },
+ "distilbert_test_5000": {
+  "macro_f1": 0.6248248499928649,
+  "accuracy": 0.6556,
+  "n_train": 3200,
+  "per_class": {
+   "negative": {
+    "precision": 0.7252591894439209,
+    "recall": 0.7695,
+    "f1": 0.7467248908296943
+   },
+   "neutral": {
+    "precision": 0.33356258596973865,
+    "recall": 0.485,
+    "f1": 0.3952730236348818
+   },
+   "positive": {
+    "precision": 0.8806179775280899,
+    "recall": 0.627,
+    "f1": 0.7324766355140186
+   }
+  },
+  "eval_elapsed_s": 268.5
+ },
+ "bootstrap_paired": {
+  "tfidf_matched_3200": {
+   "macro_f1_mean": 0.5936806277439526,
+   "ci95": [
+    0.5800962599616799,
+    0.6070608474878711
+   ]
+  },
+  "distilbert_3200": {
+   "macro_f1_mean": 0.6248559951614898,
+   "ci95": [
+    0.611782571844179,
+    0.6378964630021311
+   ]
+  },
+  "tfidf_160k": {
+   "macro_f1_mean": 0.650877397536761,
+   "ci95": [
+    0.6377151874771941,
+    0.6639161511543701
+   ]
+  }
+ },
+ "elapsed_s": 1450.3,
+ "tfidf_train_note": "Stratified 160,000-row subset of the star-balanced Google Play pool, disjoint from the 4k BERT subset (mirrors the Yelp/Amazon 160k/4k protocol).",
+ "note": "App-store generalizability check (editor scope comment / Section 3). Same three-class mapping, same training budgets (160k TF-IDF / 3.2k BERT), same reference DistilBERT configuration as the Yelp and Amazon studies.",
+ "pool_note": "Star-balanced Google Play pool, 38,000 rows per star rating x 5 stars = 190,000 rows; the train/val/test CSVs hold the carved subsets (train+val+test ~170k rows). pool_size is the full pool, matching the paper (Section 3 app-store pool of 190{,}000 rows).",
+ "rows_written": {
+  "train": 160087,
+  "val": 5000,
+  "test": 5003
+ }
+}

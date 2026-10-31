@@ -1,0 +1,62 @@
+{
+ "protocol": {
+  "n_single_requests": 200,
+  "warmup": 8,
+  "batch_size": 32,
+  "max_length_tokens": 256,
+  "input_window_chars": "80-400",
+  "measurement": "wall-clock, one process per model, inference only (no I/O, no HTTP overhead)",
+  "memory_definition": "resident set of a process serving only this model, minus an empty-interpreter baseline",
+  "empty_interpreter_rss_mb": 22.7
+ },
+ "n_requests": 200,
+ "warmup": 8,
+ "torch_threads": 14,
+ "published_full_model_ms": 44.805,
+ "deep_exit_full_layer_ms": 47.45889999867359,
+ "per_layer": [
+  {
+   "layer": 6,
+   "latency_median_ms": 47.45889999867359,
+   "latency_p95_ms": 50.62677499936397,
+   "latency_mean_ms": 47.80033150002055,
+   "speedup_vs_full": 1.0
+  },
+  {
+   "layer": 5,
+   "latency_median_ms": 39.49844999988272,
+   "latency_p95_ms": 41.79732999964471,
+   "latency_mean_ms": 39.639831999993476,
+   "speedup_vs_full": 1.2015382881812957
+  },
+  {
+   "layer": 4,
+   "latency_median_ms": 31.613499999366468,
+   "latency_p95_ms": 33.756440001343435,
+   "latency_mean_ms": 31.728290999926685,
+   "speedup_vs_full": 1.2494171793909017
+  },
+  {
+   "layer": 3,
+   "latency_median_ms": 23.898800000097253,
+   "latency_p95_ms": 25.18402000023343,
+   "latency_mean_ms": 23.997346000196558,
+   "speedup_vs_full": 1.3228070028301764
+  },
+  {
+   "layer": 2,
+   "latency_median_ms": 15.896300001259078,
+   "latency_p95_ms": 16.947559999243822,
+   "latency_mean_ms": 15.951225500011788,
+   "speedup_vs_full": 1.5034190345051572
+  },
+  {
+   "layer": 1,
+   "latency_median_ms": 8.12104999931762,
+   "latency_p95_ms": 8.738139997876715,
+   "latency_mean_ms": 8.174596000008023,
+   "speedup_vs_full": 1.9574192995480613
+  }
+ ],
+ "protocol_gap_pct": 5.923222851631715
+}

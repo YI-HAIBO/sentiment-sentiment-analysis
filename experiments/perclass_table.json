@@ -1,0 +1,189 @@
+{
+ "label_order": [
+  "negative",
+  "neutral",
+  "positive"
+ ],
+ "test_split": {
+  "VADER (default thresholds)": {
+   "n": 20000,
+   "macro_f1": 0.4213827434047512,
+   "accuracy": 0.56145,
+   "per_class": {
+    "negative": {
+     "precision": 0.8475548902195609,
+     "recall": 0.424625,
+     "f1": 0.5657894736842105,
+     "support": 8000
+    },
+    "neutral": {
+     "precision": 0.21852731591448932,
+     "recall": 0.023,
+     "f1": 0.04161954308979869,
+     "support": 4000
+    },
+    "positive": {
+     "precision": 0.49707790122663925,
+     "recall": 0.9675,
+     "f1": 0.6567392134402443,
+     "support": 8000
+    }
+   }
+  },
+  "TF-IDF + Logistic Regression": {
+   "n": 20000,
+   "macro_f1": 0.7550368535532063,
+   "accuracy": 0.78455,
+   "per_class": {
+    "negative": {
+     "precision": 0.8777467039552537,
+     "recall": 0.823875,
+     "f1": 0.8499580888516345,
+     "support": 8000
+    },
+    "neutral": {
+     "precision": 0.510357072400868,
+     "recall": 0.64675,
+     "f1": 0.5705149410078288,
+     "support": 4000
+    },
+    "positive": {
+     "precision": 0.8775262732417138,
+     "recall": 0.814125,
+     "f1": 0.8446375308001556,
+     "support": 8000
+    }
+   }
+  },
+  "TF-IDF + Linear SVM": {
+   "n": 20000,
+   "macro_f1": 0.7451156395705484,
+   "accuracy": 0.78875,
+   "per_class": {
+    "negative": {
+     "precision": 0.8489306465570527,
+     "recall": 0.858375,
+     "f1": 0.8536267014730561,
+     "support": 8000
+    },
+    "neutral": {
+     "precision": 0.5371223758320532,
+     "recall": 0.5245,
+     "f1": 0.5307361497596762,
+     "support": 4000
+    },
+    "positive": {
+     "precision": 0.8507183010618363,
+     "recall": 0.85125,
+     "f1": 0.8509840674789129,
+     "support": 8000
+    }
+   }
+  },
+  "VADER (tuned thresholds)": {
+   "n": 20000,
+   "macro_f1": 0.44624818711013275,
+   "accuracy": 0.5665,
+   "per_class": {
+    "negative": {
+     "precision": 0.846589509972913,
+     "recall": 0.42975,
+     "f1": 0.5701019815935661,
+     "support": 8000
+    },
+    "neutral": {
+     "precision": 0.2428842504743833,
+     "recall": 0.064,
+     "f1": 0.10130589631974674,
+     "support": 4000
+    },
+    "positive": {
+     "precision": 0.5129996640913671,
+     "recall": 0.9545,
+     "f1": 0.6673366834170854,
+     "support": 8000
+    }
+   }
+  },
+  "DistilBERT (published checkpoint, 20k test)": {
+   "n": 20000,
+   "macro_f1": 0.6810231419407725,
+   "accuracy": 0.72115,
+   "per_class": {
+    "negative": {
+     "precision": 0.8104676771602539,
+     "recall": 0.782,
+     "f1": 0.7959793880017813
+    },
+    "neutral": {
+     "precision": 0.4224956822107081,
+     "recall": 0.48925,
+     "f1": 0.4534291010194625
+    },
+    "positive": {
+     "precision": 0.8118708327885998,
+     "recall": 0.77625,
+     "f1": 0.7936609368010735
+    }
+   }
+  }
+ },
+ "note": "Per-class breakdown for all five models, aligned to the test-split row of the published comparison table.",
+ "bert_400row": {
+  "n": 400,
+  "macro_f1": 0.6431656754237399,
+  "accuracy": 0.675,
+  "per_class": {
+   "negative": {
+    "precision": 0.7419354838709677,
+    "recall": 0.71875,
+    "f1": 0.7301587301587301,
+    "support": 160
+   },
+   "neutral": {
+    "precision": 0.37735849056603776,
+    "recall": 0.5,
+    "f1": 0.43010752688172044,
+    "support": 80
+   },
+   "positive": {
+    "precision": 0.8273381294964028,
+    "recall": 0.71875,
+    "f1": 0.7692307692307693,
+    "support": 160
+   }
+  }
+ },
+ "neutral_bottleneck_check": {
+  "VADER (default thresholds)": {
+   "neutral_is_lowest": true,
+   "neutral_f1": 0.04161954308979869,
+   "min_f1": 0.04161954308979869,
+   "gap_to_best": 0.6151196703504457
+  },
+  "TF-IDF + Logistic Regression": {
+   "neutral_is_lowest": true,
+   "neutral_f1": 0.5705149410078288,
+   "min_f1": 0.5705149410078288,
+   "gap_to_best": 0.27944314784380564
+  },
+  "TF-IDF + Linear SVM": {
+   "neutral_is_lowest": true,
+   "neutral_f1": 0.5307361497596762,
+   "min_f1": 0.5307361497596762,
+   "gap_to_best": 0.3228905517133799
+  },
+  "VADER (tuned thresholds)": {
+   "neutral_is_lowest": true,
+   "neutral_f1": 0.10130589631974674,
+   "min_f1": 0.10130589631974674,
+   "gap_to_best": 0.5660307870973387
+  },
+  "DistilBERT (published checkpoint, 20k test)": {
+   "neutral_is_lowest": true,
+   "neutral_f1": 0.4534291010194625,
+   "min_f1": 0.4534291010194625,
+   "gap_to_best": 0.34255028698231876
+  }
+ }
+}

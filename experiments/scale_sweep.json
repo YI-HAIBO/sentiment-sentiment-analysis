@@ -1,0 +1,66 @@
+{
+  "test_size": 20000,
+  "models": {
+    "tfidf_logreg": [
+      {
+        "n_train": 4000,
+        "accuracy": 0.72925,
+        "macro_f1": 0.6883415151797981,
+        "weighted_f1": 0.7310887975596218,
+        "neutral_f1": 0.47460510328068045,
+        "elapsed_s": 8.2
+      },
+      {
+        "n_train": 8000,
+        "accuracy": 0.74525,
+        "macro_f1": 0.7074923697971283,
+        "weighted_f1": 0.7484921498596175,
+        "neutral_f1": 0.502493469484683,
+        "elapsed_s": 9.5
+      },
+      {
+        "n_train": 16000,
+        "accuracy": 0.75575,
+        "macro_f1": 0.7218590654258383,
+        "weighted_f1": 0.76101119283933,
+        "neutral_f1": 0.5260984283583802,
+        "elapsed_s": 13.1
+      }
+    ],
+    "bert": [
+      {
+        "n_train": 4000,
+        "n_train_actual": 3600,
+        "n_val": 400,
+        "n_test": 20000,
+        "accuracy": 0.7231,
+        "macro_f1": 0.6919,
+        "weighted_f1": 0.7151,
+        "neutral_f1": 0.4534,
+        "elapsed_s": 1068.0
+      },
+      {
+        "n_train": 8000,
+        "n_train_actual": 7200,
+        "n_val": 800,
+        "n_test": 20000,
+        "accuracy": 0.7278,
+        "macro_f1": 0.6954958289751496,
+        "weighted_f1": 0.7378019918547276,
+        "neutral_f1": 0.4839650145772595,
+        "elapsed_s": 2811.5
+      },
+      {
+        "n_train": 16000,
+        "n_train_actual": 14400,
+        "n_val": 1600,
+        "n_test": 20000,
+        "accuracy": 0.7483,
+        "macro_f1": 0.7162671690685812,
+        "weighted_f1": 0.7566647153603291,
+        "neutral_f1": 0.5142794376098418,
+        "elapsed_s": 3299.6
+      }
+    ]
+  }
+}

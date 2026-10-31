@@ -1,0 +1,86 @@
+{
+  "model_name": "models/distilbert_local",
+  "epochs": 2,
+  "batch_size": 16,
+  "learning_rate": 2e-05,
+  "max_length": 256,
+  "device": "cpu",
+  "n_train": 3200,
+  "n_val": 400,
+  "n_test": 400,
+  "best_val_macro_f1": 0.7014446719127125,
+  "test": {
+    "accuracy": 0.72,
+    "macro_f1": 0.690603333390043,
+    "weighted_f1": 0.731369502713554,
+    "per_class": {
+      "negative": {
+        "precision": 0.7947019867549668,
+        "recall": 0.75,
+        "f1": 0.7717041800643086,
+        "support": 160
+      },
+      "neutral": {
+        "precision": 0.42201834862385323,
+        "recall": 0.575,
+        "f1": 0.48677248677248675,
+        "support": 80
+      },
+      "positive": {
+        "precision": 0.8714285714285714,
+        "recall": 0.7625,
+        "f1": 0.8133333333333334,
+        "support": 160
+      }
+    },
+    "confusion_matrix": [
+      [
+        120,
+        35,
+        5
+      ],
+      [
+        21,
+        46,
+        13
+      ],
+      [
+        10,
+        28,
+        122
+      ]
+    ],
+    "n": 400
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.8677876341342926,
+      "train_acc": 0.5846875,
+      "val_loss": 0.721235990524292,
+      "val_acc": 0.6675,
+      "val_macro_f1": 0.652467756174235
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.552121108919382,
+      "train_acc": 0.7853125,
+      "val_loss": 0.6125323176383972,
+      "val_acc": 0.73,
+      "val_macro_f1": 0.7014446719127125
+    }
+  ],
+  "label_order": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "quick_mode": false,
+  "variant": "ml256",
+  "config": {
+    "max_length": 256,
+    "learning_rate": 2e-05,
+    "batch_size": 16
+  },
+  "wall_time_s": 1374.0
+}

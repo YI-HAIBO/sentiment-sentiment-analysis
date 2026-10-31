@@ -1,0 +1,55 @@
+{
+  "seeds": [
+    42,
+    7,
+    123
+  ],
+  "config": {
+    "max_length": 128,
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "epochs": 2
+  },
+  "note": "Seed 42 is the canonical paper baseline (from bert_baseline_summary.json). Seeds 7 and 123 were rerun via scripts/run_statistical_and_scale.py bert-multiseed.",
+  "per_seed": [
+    {
+      "seed": 42,
+      "n_train": 3200,
+      "n_test": 400,
+      "accuracy": 0.675,
+      "macro_f1": 0.6431656754237399,
+      "weighted_f1": 0.6857773051321439,
+      "neutral_f1": 0.43010752688172044,
+      "elapsed_s": 0,
+      "source": "bert_baseline_summary.json"
+    },
+    {
+      "seed": 7,
+      "n_train": 3200,
+      "n_test": 400,
+      "accuracy": 0.695,
+      "macro_f1": 0.668647901248569,
+      "weighted_f1": 0.7070406939335159,
+      "neutral_f1": 0.47668393782383417,
+      "elapsed_s": 923.6
+    },
+    {
+      "seed": 123,
+      "n_train": 3200,
+      "n_test": 400,
+      "accuracy": 0.685,
+      "macro_f1": 0.6532819588308417,
+      "weighted_f1": 0.6933306157903804,
+      "neutral_f1": 0.4530386740331492,
+      "elapsed_s": 578.5
+    }
+  ],
+  "summary": {
+    "macro_f1_mean": 0.6550,
+    "macro_f1_std": 0.0116,
+    "macro_f1_min": 0.6432,
+    "macro_f1_max": 0.6686,
+    "accuracy_mean": 0.685,
+    "neutral_f1_mean": 0.4533
+  }
+}
