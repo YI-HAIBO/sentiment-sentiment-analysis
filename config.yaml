@@ -1,0 +1,62 @@
+# =========================================================
+# Sentiment Classification System — Configuration
+# =========================================================
+
+seed: 42
+language: en
+task: three_class   # positive / neutral / negative
+
+# -------------------- Data --------------------
+data:
+  source: "Yelp/yelp_review_full"   # HuggingFace dataset (namespaced)
+  local_cache: "data/raw"
+  processed_dir: "data/processed"
+  # three-class mapping from 0-4 star labels (0 = 1 star, 4 = 5 stars)
+  mapping:
+    negative: [0, 1]
+    neutral:  [2]
+    positive: [3, 4]
+  # stratified split; train/val/test
+  split_ratio: [0.8, 0.1, 0.1]
+  # for baseline experiments use a subset to keep runtime reasonable
+  baseline_subset: 200000
+  # for BERT training on CPU — capped for feasibility
+  bert_subset: 4000
+
+# -------------------- Baselines --------------------
+baselines:
+  vader: true
+  tfidf_logreg: true
+  tfidf_svc: true
+  tfidf:
+    min_df: 2
+    max_df: 0.95
+    ngram_range: [1, 2]
+    max_features: 30000
+
+# -------------------- Transformer --------------------
+bert:
+  model_name: "models/distilbert_local"
+  max_length: 128
+  batch_size: 16
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  epochs: 2
+  warmup_ratio: 0.1
+  fp16: false
+  device: "cpu"
+  seed: 42
+
+# -------------------- Evaluation --------------------
+eval:
+  metrics: [accuracy, precision, recall, f1, macro_f1, weighted_f1]
+  save_confusion_matrices: true
+  save_errors: true
+  n_errors_sample: 20
+
+# -------------------- Serving --------------------
+serving:
+  host: "127.0.0.1"
+  port: 8000
+  model_path: "models/checkpoints/bert_final"
+  fallback_model: "models/checkpoints/tfidf_logreg"

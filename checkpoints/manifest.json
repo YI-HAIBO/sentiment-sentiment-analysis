@@ -1,0 +1,48 @@
+{
+  "bytes": 267856677,
+  "sha256_original": "e920524e185a9e88b0ceeea5beeef03d6efb819fd2d00298b902cf5b5dff71ff",
+  "restore_target": "models/checkpoints/best.pt",
+  "chunk_budget": 33554432,
+  "chunks": [
+    {
+      "file": "ckpt.part001.gz",
+      "bytes": 33554432,
+      "sha256_gzip": "00cdc460b5ced499e9019b24261f296d0ce77fd399da70759cc4ab740306a8f3"
+    },
+    {
+      "file": "ckpt.part002.gz",
+      "bytes": 33554432,
+      "sha256_gzip": "c8b0decafd4e9c68af10c2564f4928aa68274697699f9965eb40e361ada2160f"
+    },
+    {
+      "file": "ckpt.part003.gz",
+      "bytes": 33554432,
+      "sha256_gzip": "c0de70c6a446c6f71835e7b99f6514e8bc5068af47133bea74f3a76ca4ec8440"
+    },
+    {
+      "file": "ckpt.part004.gz",
+      "bytes": 33554432,
+      "sha256_gzip": "2d31207230e641560f6743fb991ec06550b91c099cad17e15e295d2cff5c959a"
+    },
+    {
+      "file": "ckpt.part005.gz",
+      "bytes": 33554432,
+      "sha256_gzip": "aeaced20e60d179a069bea2e418a7ba24473909cb8ecdd00ba06205eee898f5d"
+    },
+    {
+      "file": "ckpt.part006.gz",
+      "bytes": 33554432,
+      "sha256_gzip": "c743a3ade7e116c49e51c92d13b5c3ce81b058e8f8e8314917cf184dc578b3ce"
+    },
+    {
+      "file": "ckpt.part007.gz",
+      "bytes": 33554432,
+      "sha256_gzip": "4a0391afd2447ba7b37ea4442e7fc9bd843e12be3f9e84429785938e87ed9d3f"
+    },
+    {
+      "file": "ckpt.part008.gz",
+      "bytes": 32975653,
+      "sha256_gzip": "b0437637ffba27b63d8bfb81f13c68b522bc0cd7551e78b5e7f60ca275a9ed1e"
+    }
+  ]
+}
